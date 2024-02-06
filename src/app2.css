@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.mainNavbar {
+  color: blue;
+  background: rgb(130, 130, 255);
+  border: 2px solid black;
+  padding-top: 4px;
+  height: 30px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+}
+
+.nav-elem {
+  padding-top: 20px;
+  background-color: rgb(64, 64, 168);
+  border: 2px solid black;
+  height: 100vh;
+}
