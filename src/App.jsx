@@ -63,6 +63,8 @@ function App() {
   return (
     <div>
       <div>
+        <button variant="contained" color="primary" 
+                size="large"> Click!</button>
         <table border="1">
           <thead>
             <tr>
@@ -77,13 +79,16 @@ function App() {
             {apiData.products?.map((o) => (
               <tr key={o.id}>
                 <td>{o.id}</td>
-                <td><img src={o.thumbnail} width="80"/></td>
+                <td>
+                  <img src={o.thumbnail} width="80" />
+                </td>
                 <td>{o.title}</td>
                 <td>{o.rating}/5</td>
                 <td>{o.price}/-</td>
               </tr>
             ))}
           </tbody>
+          
         </table>
       </div>
     </div>
