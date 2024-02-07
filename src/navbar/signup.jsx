@@ -5,13 +5,12 @@ import TextField from "@mui/material/TextField";
 
 const Signup = () => {
   return (
-    <div>
+    <div className="outerDiv">
       <div className="signup">
         <div className="signup-box">
           <br />
           <label className="label">Sign Up</label>
           <br />
-          {/* <br /> */}
           <TextField
             style={{ marginTop: "20px" }}
             label="First Name"

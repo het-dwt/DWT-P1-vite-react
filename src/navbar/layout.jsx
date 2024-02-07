@@ -25,14 +25,15 @@ const Layout = () => {
             <Link to="/signin">Sign-In</Link>
           </h4>
         </nav>
-      </header><hr/>
+      </header>
+      <hr />
 
-      <Outlet /><hr/>
-      <footer>
+      <Outlet />
+      {/* <footer>
         <div className="footer-main">
           <h4>----This is footer Area----</h4>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 };
