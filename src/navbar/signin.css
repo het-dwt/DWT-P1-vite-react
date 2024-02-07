@@ -1,0 +1,26 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.signin-box {
+  color: #5dacbd;
+  width: 100vh;
+  height: 85vh;
+  justify-content: left;
+  background-color: #24527a;
+  display: block;
+}
+.signin {
+  background-color: #a7bcb9;
+}
+
+.label {
+  margin-top: 50px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.Button {
+  margin: 10px;
+}

@@ -1,0 +1,10 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+#dailogbox{
+    height: 80vh;
+    width: auto;
+    background-color: #e0ebeb;
+}

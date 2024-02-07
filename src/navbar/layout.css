@@ -1,0 +1,21 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+#navTab {
+  text-decoration: none;
+}
+.mainNavbar {
+  color: blue;
+  background: #5dacbd;
+  position: relative;
+  padding-top: 4px;
+  height: 40px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+}

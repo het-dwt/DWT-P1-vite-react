@@ -1,34 +1,17 @@
 import React from "react";
-import "./signup.css";
+import "./signin.css";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 
-const Signup = () => {
+const Signin = () => {
   return (
     <div>
-      <div className="signup">
-        <div className="signup-box">
+      <div className="signin">
+        <div className="signin-box">
           <br />
-          <label className="label">Sign Up</label>
+          <label className="label">Sign In</label>
           <br />
           {/* <br /> */}
-          <TextField
-            style={{ marginTop: "20px" }}
-            label="First Name"
-            id="filled-size-small"
-            variant="filled"
-            size="small"
-          />
-          <br />
-
-          <TextField
-            style={{ marginTop: "20px" }}
-            label="Last Name"
-            id="filled-size-small"
-            variant="filled"
-            size="small"
-          />
-          <br />
 
           <TextField
             style={{ marginTop: "20px" }}
@@ -50,19 +33,10 @@ const Signup = () => {
           />
           <br />
 
-          <TextField
-            style={{ marginTop: "20px" }}
-            type="password"
-            label="Confirm Password"
-            id="filled-size-small"
-            variant="filled"
-            size="small"
-          />
-          <br />
           <div style={{ marginTop: "20px" }}>
             <Button variant="contained">Cancle</Button>
             <Button style={{ marginLeft: "35px" }} variant="contained">
-              Sign Up
+              Sign In
             </Button>
           </div>
         </div>
@@ -71,4 +45,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Signin;

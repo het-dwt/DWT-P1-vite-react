@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+#apiTable {
+  width: auto;
+  /* border-spacing: 5px; */
+}
+
+#api-maintable{
+  padding-top: 5%;
+}
