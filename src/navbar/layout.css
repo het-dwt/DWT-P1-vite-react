@@ -19,7 +19,8 @@
   text-decoration: none;
   text-decoration-line: none;
   text-transform: capitalize;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
   background: rgba(224, 227, 255, 0.85);
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
