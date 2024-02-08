@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
 import "./apiData.css";
+import axios from "axios";
 import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import Rating from "@mui/material/Rating";
+import { Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import TableRow from "@mui/material/TableRow";
+import TableHead from "@mui/material/TableHead";
+import TableCell from "@mui/material/TableCell";
+import TableBody from "@mui/material/TableBody";
+import TableContainer from "@mui/material/TableContainer";
 
 function Apidata() {
   const [apiData, setApiData] = useState([]);
@@ -47,10 +49,23 @@ function Apidata() {
                 <label id="label">{o.id}</label>
               </TableCell>
               <TableCell align="center">
-                <img src={o.thumbnail} width="100" height="100"/>
+                <img
+                  src={o.thumbnail}
+                  id="tableImage"
+                  style={{ borderRadius: "10px" }}
+                />
               </TableCell>
               <TableCell align="center">{o.title}</TableCell>
-              <TableCell align="center">{o.rating} / 5</TableCell>
+              <TableCell>
+                <Typography component="legend">
+                  <Rating
+                    name="half-rating-read"
+                    defaultValue={o.rating}
+                    precision={1}
+                    readOnly
+                  />
+                </Typography>
+              </TableCell>
               <TableCell align="center">{o.price} $</TableCell>
             </TableRow>
           ))}

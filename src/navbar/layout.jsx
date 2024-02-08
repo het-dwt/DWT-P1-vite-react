@@ -1,6 +1,6 @@
+import "./layout.css";
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import "./layout.css";
 const Layout = () => {
   return (
     <>
@@ -8,23 +8,19 @@ const Layout = () => {
         <h4 id="navTab">
           <Link to="/">Home</Link>
         </h4>
-        <h4>
+        <h4 id="navTab">
           <Link to="/about">About</Link>
         </h4>
-        <h4>
+        <h4 id="navTab">
           <Link to="/apiData">Api-Data</Link>
         </h4>
-        <h4>
+        <h4 id="navTab">
           <Link to="/contact">Contact</Link>
         </h4>
-        <h4>
+        <h4 id="navTab">
           <Link to="/signup">Login</Link>
         </h4>
-        {/* <h4>
-            <Link to="/signin">Sign-In</Link>
-          </h4> */}
       </header>
-
       <Outlet />
       <footer>
         <div className="footer-main">
