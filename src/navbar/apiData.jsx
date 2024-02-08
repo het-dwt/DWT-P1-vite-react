@@ -20,7 +20,7 @@ function Apidata() {
 
   return (
     <TableContainer component={Paper}>
-      <Table aria-label="simple table">
+      <Table aria-label="simple table" id="Table">
         <TableHead>
           <TableRow>
             <TableCell align="center">

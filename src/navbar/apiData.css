@@ -11,3 +11,9 @@
   color: #5dacbd;
   margin-bottom: 20px;
 }
+
+#Table{
+  margin: 10px;
+  border: 2px solid #5dacbd;;
+  width: 98%;
+}
