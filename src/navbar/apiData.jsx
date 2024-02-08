@@ -47,11 +47,11 @@ function Apidata() {
                 <label id="label">{o.id}</label>
               </TableCell>
               <TableCell align="center">
-                <img src={o.thumbnail} width="100" />
+                <img src={o.thumbnail} width="100" height="100"/>
               </TableCell>
               <TableCell align="center">{o.title}</TableCell>
               <TableCell align="center">{o.rating} / 5</TableCell>
-              <TableCell align="center">{o.price} /-</TableCell>
+              <TableCell align="center">{o.price} $</TableCell>
             </TableRow>
           ))}
         </TableBody>

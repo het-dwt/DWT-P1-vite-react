@@ -4,27 +4,25 @@ import "./layout.css";
 const Layout = () => {
   return (
     <>
-      <header>
-        <nav className="mainNavbar">
-          <h4 id="navTab">
-            <Link to="/">Home</Link>
-          </h4>
-          <h4>
-            <Link to="/about">About</Link>
-          </h4>
-          <h4>
-            <Link to="/apiData">Api-Data</Link>
-          </h4>
-          <h4>
-            <Link to="/contact">Contact</Link>
-          </h4>
-          <h4>
-            <Link to="/signup">Login</Link>
-          </h4>
-          {/* <h4>
+      <header className="mainNavbar">
+        <h4 id="navTab">
+          <Link to="/">Home</Link>
+        </h4>
+        <h4>
+          <Link to="/about">About</Link>
+        </h4>
+        <h4>
+          <Link to="/apiData">Api-Data</Link>
+        </h4>
+        <h4>
+          <Link to="/contact">Contact</Link>
+        </h4>
+        <h4>
+          <Link to="/signup">Login</Link>
+        </h4>
+        {/* <h4>
             <Link to="/signin">Sign-In</Link>
           </h4> */}
-        </nav>
       </header>
 
       <Outlet />

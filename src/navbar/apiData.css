@@ -7,13 +7,15 @@
 }
 
 #label {
-  font-size: 1rem;
-  color: #5dacbd;
+  font-size: x-large;
+  color: #000000;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
 #Table{
   margin: 10px;
   border: 2px solid #5dacbd;;
   width: 98%;
+  background-color: #3f738080;
 }

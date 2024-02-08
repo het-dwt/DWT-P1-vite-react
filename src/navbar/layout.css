@@ -5,16 +5,20 @@
 
 #navTab {
   text-decoration: none;
+  text-decoration-line: none;
 }
 .mainNavbar {
   color: blue;
-  background: #5dacbd;
-  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  position: fixed;
+  top: 0;
   padding-top: 4px;
   height: 40px;
+  width: 100%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   text-transform: capitalize;
+  text-decoration-line: none;
   display: flex;
   justify-content: space-around;
   text-decoration: none;
