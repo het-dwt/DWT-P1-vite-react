@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./apiData.css";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
 function Apidata() {
   const [apiData, setApiData] = useState([]);
@@ -12,32 +19,44 @@ function Apidata() {
   }, []);
 
   return (
-    <div id="api-mainTable" className="nav-elem">
-      <table id="apiTable" border={4}>
-        <thead >
-          <tr>
-            <th style={{padding:"30px"}}>Sr:</th>
-            <th style={{padding:"30px"}}>Product</th>
-            <th style={{padding:"30px"}}>Product Name:</th>
-            <th style={{padding:"30px"}}>Rating:</th>
-            <th style={{padding:"30px"}}>Price:</th>
-          </tr>
-        </thead>
-        <tbody>
+    <TableContainer component={Paper}>
+      <Table aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell align="center">
+              <label id="label">Sr.</label>
+            </TableCell>
+            <TableCell align="center">
+              <label id="label">Product</label>
+            </TableCell>
+            <TableCell align="center">
+              <label id="label">Product Name</label>
+            </TableCell>
+            <TableCell align="center">
+              <label id="label">Rating</label>
+            </TableCell>
+            <TableCell align="center">
+              <label id="label">Price</label>
+            </TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
           {apiData.products?.map((o) => (
-            <tr key={o.id}>
-              <td>{o.id}</td>
-              <td>
-                <img src={o.thumbnail} width="80" />
-              </td>
-              <td><b>{o.title}</b></td>
-              <td>{o.rating}/5</td>
-              <td>{o.price}/-</td>
-            </tr>
+            <TableRow key={o.id}>
+              <TableCell align="center" component="th" scope="row">
+                <label id="label">{o.id}</label>
+              </TableCell>
+              <TableCell align="center">
+                <img src={o.thumbnail} width="100" />
+              </TableCell>
+              <TableCell align="center">{o.title}</TableCell>
+              <TableCell align="center">{o.rating} / 5</TableCell>
+              <TableCell align="center">{o.price} /-</TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
-    </div>
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }
 

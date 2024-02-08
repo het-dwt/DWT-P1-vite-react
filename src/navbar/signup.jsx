@@ -2,6 +2,7 @@ import React from "react";
 import "./signup.css";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import { Link, Outlet } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -63,6 +64,13 @@ const Signup = () => {
             <Button style={{ marginLeft: "35px" }} variant="contained">
               Sign Up
             </Button>
+          </div>
+          <div>
+            <h4 className="h4tag">Already Have An Account?</h4>
+            <h4>
+              <Link to="/signin">Sign-In</Link>
+            </h4>
+            <Outlet />
           </div>
         </div>
       </div>

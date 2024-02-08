@@ -17,8 +17,8 @@
 }
 
 .label {
-  margin-top: 50px;
   font-size: 2rem;
+  color: #5dacbd;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
@@ -30,4 +30,8 @@
   display: flex;
   justify-content: center;
   margin: 100px;
+}
+
+.h4tag {
+  margin-top: 20px;
 }

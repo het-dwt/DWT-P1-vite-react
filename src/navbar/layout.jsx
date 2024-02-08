@@ -19,11 +19,11 @@ const Layout = () => {
             <Link to="/contact">Contact</Link>
           </h4>
           <h4>
-            <Link to="/signup">Sign-Up</Link>
+            <Link to="/signup">Login</Link>
           </h4>
-          <h4>
+          {/* <h4>
             <Link to="/signin">Sign-In</Link>
-          </h4>
+          </h4> */}
         </nav>
       </header>
       <hr />

@@ -5,11 +5,9 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
   "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-#apiTable {
-  width: auto;
-  /* border-spacing: 5px; */
-}
 
-#api-maintable{
-  padding-top: 5%;
+#label {
+  font-size: 1rem;
+  color: #5dacbd;
+  margin-bottom: 20px;
 }

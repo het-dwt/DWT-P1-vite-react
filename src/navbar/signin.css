@@ -34,5 +34,17 @@
 .outerDiv {
   display: flex;
   justify-content: center;
-  /* background-color: beige; */
+}
+
+.label {
+  font-size: 2rem;
+  color: #5dacbd;
+  margin-bottom: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.h4tag {
+  color: #5dacbd;
+  margin-top: 20px;
 }
