@@ -1,5 +1,6 @@
 import "./layout.css";
 import React from "react";
+
 import { Link, Outlet } from "react-router-dom";
 const Layout = () => {
   return (
@@ -20,6 +21,9 @@ const Layout = () => {
         <h4 id="navTab">
           <Link to="/signup">Login</Link>
         </h4>
+        {/* <h4 id="navTab">
+          <Link to="/clock">clock</Link>
+        </h4> */}
       </header>
       <Outlet />
       <footer>
