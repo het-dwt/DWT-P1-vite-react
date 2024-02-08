@@ -26,14 +26,13 @@ const Layout = () => {
           </h4> */}
         </nav>
       </header>
-      <hr />
 
       <Outlet />
-      {/* <footer>
+      <footer>
         <div className="footer-main">
           <h4>----This is footer Area----</h4>
         </div>
-      </footer> */}
+      </footer>
     </>
   );
 };

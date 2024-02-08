@@ -1,10 +1,10 @@
 import React from "react";
+import "./about.css";
 const About = () => {
   return (
     <div>
       <div className="about">
-        {/* <h3 className="nav-elem">This is About Page : </h3> */}
-        <div id="dailogbox">this is div of about</div>
+        <div id="bg-about">this is div of About</div>
       </div>
     </div>
   );
