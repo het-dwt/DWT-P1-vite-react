@@ -13,7 +13,7 @@ const Layout = () => {
         <div className="mainNavbar">
           <div id="avatar">
             <Stack>
-              <Avatar sx={{ bgcolor: "#3B9932" }}>DW</Avatar>
+              <Avatar sx={{ bgcolor: "#3B9932" }}variant="rounded">HG</Avatar>
             </Stack>
           </div>
           <div id="navbar">
