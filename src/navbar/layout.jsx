@@ -1,9 +1,13 @@
 import "./layout.css";
 import React from "react";
 import Clock from "./clock";
+import Fade from '@mui/material/Fade';
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
 import Avatar from "@mui/material/Avatar";
+import Backdrop from '@mui/material/Backdrop';
+import Tooltip from "@mui/material/Tooltip";
+import CircularProgress from '@mui/material/CircularProgress';
 
 import { Link, Outlet } from "react-router-dom";
 const Layout = () => {
@@ -13,7 +17,17 @@ const Layout = () => {
         <div className="mainNavbar">
           <div id="avatar">
             <Stack>
-              <Avatar sx={{ bgcolor: "#3B9932" }}variant="rounded">HG</Avatar>
+              <Tooltip
+                title="Het Gajjar"
+                placement="right"
+                arrow
+                TransitionComponent={Fade}
+                TransitionProps={{ timeout: 500 }}
+              >
+                <Avatar sx={{ bgcolor: "#3B9932" }} variant="rounded">
+                  HG
+                </Avatar>
+              </Tooltip>
             </Stack>
           </div>
           <div id="navbar">
