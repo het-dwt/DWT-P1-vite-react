@@ -1,18 +1,23 @@
 import { useState, useEffect } from "react";
-import "./clock.css"
+import "./clock.css";
 
 function Clock() {
-  const [time, setTime] = useState(new Date());
+  const [date, setDate] = useState(new Date());
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setTime(new Date());
+      setDate(new Date());
     }, 1000);
 
     return () => clearInterval(intervalId);
   }, []);
 
-  return <h3 className="clock">{time.toLocaleTimeString()}</h3>;
+  return (
+    <div id="clockParent" >
+      <small className="clock">{date.toLocaleTimeString()}</small>
+      <br /> <small className="clock">{date.toLocaleDateString()}</small>
+    </div>
+  );
 }
 
 export default Clock;

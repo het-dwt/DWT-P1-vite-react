@@ -60,8 +60,12 @@ const Signup = () => {
           />
           <br />
           <div style={{ marginTop: "20px" }}>
-            <Button variant="contained">Cancle</Button>
-            <Button style={{ marginLeft: "35px" }} variant="contained">
+            <Button variant="contained"onClick={() => {
+                confirm("Are You Sure ?");
+              }}>Cancle</Button>
+            <Button style={{ marginLeft: "35px" }} variant="contained" onClick={() => {
+                confirm("Press Ok to Sign-Up.");
+              }}>
               Sign Up
             </Button>
           </div>

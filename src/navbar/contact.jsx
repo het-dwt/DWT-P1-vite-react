@@ -37,8 +37,9 @@ const Contact = () => {
               type="text"
               label="Message:"
               id="filled-size-small"
+              multiline
               variant="filled"
-              size="large"
+              rows={4}
             />
             <div>
               <Button variant="contained" value="reset" name="button">

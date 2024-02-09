@@ -7,22 +7,22 @@
 }
 
 .nav-elem {
-  padding-top: 20px;
-  background-color: #a7bcb9;
-  height: auto;
   width: 100%;
+  height: auto;
   display: flex;
+  padding-top: 20px;
   justify-content: center;
+  background-color: #a7bcb9;
 }
 
 .footer-main {
-  background-color: rgb(130, 130, 255);
   position: relative;
+  background-color: rgb(130, 130, 255);
 }
 
 .signup {
+  height: 100vh;
   display: flex;
   padding-top: 20px;
   justify-content: center;
-  height: 100vh;
 }

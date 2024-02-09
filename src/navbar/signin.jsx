@@ -27,13 +27,26 @@ const Signin = () => {
             size="small"
           />
           <div>
-            <Button variant="contained">Cancle</Button>
-            <Button style={{ marginLeft: "35px" }} variant="contained">
+            <Button
+              variant="contained"
+              onClick={() => {
+                confirm("Are You Sure ?");
+              }}
+            >
+              Cancle
+            </Button>
+            <Button
+              style={{ marginLeft: "35px" }}
+              variant="contained"
+              onClick={() => {
+                confirm("Press Ok to Sign-in.");
+              }}
+            >
               Sign In
             </Button>
           </div>
           <div>
-          <h4 className="h4tag">Create An Account?</h4>
+            <h4 className="h4tag">Create An Account?</h4>
             <h4>
               <Link to="/signup">Sign-Up</Link>
             </h4>

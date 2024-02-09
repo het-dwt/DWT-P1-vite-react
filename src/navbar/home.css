@@ -8,8 +8,8 @@
 }
 #bg-home {
   height: 100vh;
+  margin-top: 70px;
   align-items: center;
-  margin-top: 50px;
   background-size: cover;
   background-repeat: repeat;
   background-position: center;

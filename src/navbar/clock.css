@@ -1,19 +1,17 @@
 .clock {
   font-weight: 600;
+  padding-top: 10px;
   width: fit-content;
-  padding: 10px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-.Paper{
+.Paper {
   width: fit-content;
 }
 
 #clockParent {
-  display: flex;
-  padding: 20px;
-  justify-content: left;
-  padding-right: 10px;
-  width: 100%;
-  position: fixed;
+  width: auto;
+  padding: 5px;
+  padding-right: 8px;
+  color: rgb(33, 21, 136);
 }
