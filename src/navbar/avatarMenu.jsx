@@ -5,9 +5,10 @@ import MenuItem from "@mui/material/MenuItem";
 import Fade from "@mui/material/Fade";
 import Avatar from "@mui/material/Avatar";
 import "./avatarMenu.css";
-import LogoutIcon from '@mui/icons-material/Logout';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import { Link } from "react-router-dom";
+import LogoutIcon from "@mui/icons-material/Logout";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
 export default function AvatarMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -42,9 +43,20 @@ export default function AvatarMenu() {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}> <AccountCircleIcon /> &nbsp; Profile</MenuItem>
-        <MenuItem onClick={handleClose}> <ManageAccountsIcon />&nbsp; My account</MenuItem>
-        <MenuItem onClick={handleClose}><LogoutIcon />&nbsp; Logout</MenuItem>
+        <MenuItem onClick={handleClose}>
+          {" "}
+          <AccountCircleIcon /> &nbsp;
+          <Link to="/myprofile" style={{ textDecoration: 'none' }}>Profile</Link> 
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          {" "}
+          <ManageAccountsIcon />
+          &nbsp;<Link to="/myAccount" style={{ textDecoration: 'none' }}>My Account</Link> 
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          <LogoutIcon />
+          &nbsp; Logout
+        </MenuItem>
       </Menu>
     </div>
   );
