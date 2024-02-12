@@ -1,11 +1,11 @@
-import * as React from "react";
-import Button from "@mui/material/Button";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Fade from "@mui/material/Fade";
-import Avatar from "@mui/material/Avatar";
 import "./avatarMenu.css";
+import * as React from "react";
+import Menu from "@mui/material/Menu";
+import Fade from "@mui/material/Fade";
 import { Link } from "react-router-dom";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
@@ -46,14 +46,23 @@ export default function AvatarMenu() {
         <MenuItem onClick={handleClose}>
           {" "}
           <AccountCircleIcon /> &nbsp;
-          <Link to="/myprofile" style={{ textDecoration: 'none' }}>Profile</Link> 
+          <Link to="/myprofile" style={{ textDecoration: "none" }}>
+            Profile
+          </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
           {" "}
           <ManageAccountsIcon />
-          &nbsp;<Link to="/myAccount" style={{ textDecoration: 'none' }}>My Account</Link> 
+          &nbsp;
+          <Link to="/myAccount" style={{ textDecoration: "none" }}>
+            My Account
+          </Link>
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem
+          onClick={() => {
+            alert("Logged Out Sucesfuly.");
+          }}
+        >
           <LogoutIcon />
           &nbsp; Logout
         </MenuItem>
