@@ -1,17 +1,17 @@
 import React from "react";
-import "./myAccount.css"
+import "./setting.css"
 import Paper from "@mui/material/Paper";
 
 
-const Account = ()=>{
+const Setting = ()=>{
     return (
         <div className="account-outerDiv">
             <div className="account">
             <Paper elevation={2}>
-              <h4>This is My Account Component.</h4>
+              <h4>This is Setting Component.</h4>
             </Paper>
             </div>
         </div>
     )
 }
-export default Account;
+export default Setting;

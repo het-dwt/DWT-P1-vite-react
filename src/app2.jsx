@@ -8,7 +8,7 @@ import Signin from "./navbar/signin";
 import Contact from "./navbar/contact";
 import Apidata from "./navbar/apiData";
 import Profile from "./navbar/myprofile";
-import Account from "./navbar/myAccount";
+import Setting from "./navbar/setting";
 import AvatarMenu from "./navbar/avatarMenu";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -26,7 +26,7 @@ export default function App2() {
           <Route path="signin" element={<Signin />} />
           <Route path="apiData" element={<Apidata />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="myAccount" element={<Account />} />
+          <Route path="setting" element={<Setting />} />
           <Route path="myprofile" element={<Profile />} />
           <Route path="avatarMenu" element={<AvatarMenu />} />
         </Route>

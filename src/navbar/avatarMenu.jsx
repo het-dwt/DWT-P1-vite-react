@@ -5,8 +5,11 @@ import Fade from "@mui/material/Fade";
 import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
 import MenuItem from "@mui/material/MenuItem";
 import LogoutIcon from "@mui/icons-material/Logout";
+import SettingsIcon from '@mui/icons-material/Settings';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
@@ -50,12 +53,21 @@ export default function AvatarMenu() {
             Profile
           </Link>
         </MenuItem>
+        <Divider />
         <MenuItem onClick={handleClose}>
           {" "}
-          <ManageAccountsIcon />
+          <PersonAddIcon />
           &nbsp;
-          <Link to="/myAccount" style={{ textDecoration: "none" }}>
-            My Account
+          <Link to="/signin" style={{ textDecoration: "none" }}>
+          Add Another Account
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleClose}>
+          {" "}
+          <SettingsIcon />
+          &nbsp;
+          <Link to="/setting" style={{ textDecoration: "none" }}>
+          Setting
           </Link>
         </MenuItem>
         <MenuItem
