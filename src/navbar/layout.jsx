@@ -1,5 +1,4 @@
 import "./layout.css";
-import React from "react";
 import Clock from "./clock";
 import AvatarMenu from "./avatarMenu";
 import Paper from "@mui/material/Paper";
@@ -33,7 +32,6 @@ const Layout = () => {
             </h4>
           </div>
           <div id="avatar">
-            {" "}
             <AvatarMenu />
           </div>
         </div>
