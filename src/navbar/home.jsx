@@ -1,9 +1,9 @@
-import React from "react";
+import "./home.css";
+// import React from "react";
 const Home = () => {
   return (
-    <div>
-      <div className="home">
-        <h3>This is Home Page : </h3>
+    <div className="home">
+      <div id="bg-home">
       </div>
     </div>
   );

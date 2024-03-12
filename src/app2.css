@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.nav-elem {
+  width: 100%;
+  height: auto;
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+  background-color: #a7bcb9;
+}
+
+.footer-main {
+  position: relative;
+  background-color: rgb(130, 130, 255);
+}
+
+.signup {
+  height: 100vh;
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+}

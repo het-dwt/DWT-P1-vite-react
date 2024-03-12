@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+#label {
+  font-weight: 400;
+  color: #000000;
+  font-size: x-large;
+  margin-bottom: 20px;
+}
+
+#Table {
+  width: 98%;
+  margin-top: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #5dacbd;
+  background-color: #3f738080;
+}
+#tableImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  border: 1px solid black;
+}

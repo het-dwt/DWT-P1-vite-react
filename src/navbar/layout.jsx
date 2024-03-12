@@ -1,26 +1,47 @@
-import React from "react";
+import "./layout.css";
+import Clock from "./clock";
+import AvatarMenu from "./avatarMenu";
+import Paper from "@mui/material/Paper";
+
 import { Link, Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/signup">Signup</Link>
-          </li>
-          <hr />
-        </ul>
-      </nav>
+      <header>
+        <div className="mainNavbar">
+          <div id="clockParent">
+            <Paper elevation={4}>
+              <Clock />
+            </Paper>
+          </div>
+          <div id="navbar">
+            <h4 id="navTab">
+              <Link to="/">Home</Link>
+            </h4>
+            <h4 id="navTab">
+              <Link to="/about">About</Link>
+            </h4>
+            <h4 id="navTab">
+              <Link to="/apiData">Api-Data</Link>
+            </h4>
+            <h4 id="navTab">
+              <Link to="/contact">Contact</Link>
+            </h4>
+            <h4 id="navTab">
+              <Link to="/signup">Login</Link>
+            </h4>
+          </div>
+          <div id="avatar">
+            <AvatarMenu />
+          </div>
+        </div>
+      </header>
       <Outlet />
+      <footer>
+        <div className="footer-main">
+          <h4>----This is footer Area----</h4>
+        </div>
+      </footer>
     </>
   );
 };

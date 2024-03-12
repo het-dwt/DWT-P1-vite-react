@@ -1,0 +1,13 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+#bg-about{
+    height: 100vh;
+    margin-top: 70px;
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    background-image: url(https://images.pexels.com/photos/3970396/pexels-photo-3970396.jpeg?auto=compress&cs=tinysrgb&w=600);
+}

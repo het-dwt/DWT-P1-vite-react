@@ -1,98 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App2.css";
+import Home from "./navbar/home";
+import Clock from "./navbar/clock";
+import About from "./navbar/about";
+import Layout from "./navbar/layout";
+import Signup from "./navbar/signup";
+import Signin from "./navbar/signin";
+import Contact from "./navbar/contact";
+import Apidata from "./navbar/apiData";
+import Profile from "./navbar/myprofile";
+import Setting from "./navbar/setting";
+import AvatarMenu from "./navbar/avatarMenu";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-  [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
-}));
-
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-  '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
-  },
-  // hide last border
-  '&:last-child td, &:last-child th': {
-    border: 0,
-  },
-}));
-
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-export default function CustomizedTables() {
+export default function App2() {
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-            <StyledTableCell align="right">Calories</StyledTableCell>
-            <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Carbs&nbsp;(g)</StyledTableCell>
-            <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="clock" element={<Clock />} />
+          <Route path="layout" element={<Layout />} />
+          <Route path="signup" element={<Signup />} />
+          <Route path="signin" element={<Signin />} />
+          <Route path="apiData" element={<Apidata />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="setting" element={<Setting />} />
+          <Route path="myprofile" element={<Profile />} />
+          <Route path="avatarMenu" element={<AvatarMenu />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }

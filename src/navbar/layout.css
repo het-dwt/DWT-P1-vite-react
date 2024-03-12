@@ -1,0 +1,45 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+#navTab {
+  width: 100%;
+  display: flex;
+  padding-top: 22px;
+  text-decoration: none;
+  justify-content: center;
+  text-decoration-line: none;
+}
+.mainNavbar {
+  top: 0;
+  gap: 80px;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: flex;
+  color: blue;
+  position: fixed;
+  text-decoration: none;
+  text-decoration-line: none;
+  text-transform: capitalize;
+  justify-content: space-between;
+  background: rgba(224, 227, 255, 0.85);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+#navbar {
+  width: 150vh;
+  display: flex;
+  font-size: small;
+  justify-content: center;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#avatar {
+  padding-top: 10px;
+  padding-right: 15px;
+}
