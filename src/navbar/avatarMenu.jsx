@@ -8,8 +8,8 @@ import Button from "@mui/material/Button";
 import Divider from "@mui/material/Divider";
 import MenuItem from "@mui/material/MenuItem";
 import LogoutIcon from "@mui/icons-material/Logout";
-import SettingsIcon from '@mui/icons-material/Settings';
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import SettingsIcon from "@mui/icons-material/Settings";
+import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 // import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 
@@ -47,7 +47,6 @@ export default function AvatarMenu() {
         TransitionComponent={Fade}
       >
         <MenuItem onClick={handleClose}>
-          {" "}
           <AccountCircleIcon /> &nbsp;
           <Link to="/myprofile" style={{ textDecoration: "none" }}>
             Profile
@@ -55,19 +54,17 @@ export default function AvatarMenu() {
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>
-          {" "}
           <PersonAddIcon />
           &nbsp;
           <Link to="/signin" style={{ textDecoration: "none" }}>
-          Add Another Account
+            Add Another Account
           </Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>
-          {" "}
           <SettingsIcon />
           &nbsp;
           <Link to="/setting" style={{ textDecoration: "none" }}>
-          Setting
+            Setting
           </Link>
         </MenuItem>
         <MenuItem
@@ -76,7 +73,9 @@ export default function AvatarMenu() {
           }}
         >
           <LogoutIcon />
-          &nbsp; Logout
+          <Link to="/signup" style={{ textDecoration: "none" }}>
+            Logout
+          </Link>
         </MenuItem>
       </Menu>
     </div>
