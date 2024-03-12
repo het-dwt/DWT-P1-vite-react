@@ -1,4 +1,3 @@
-import React from "react";
 import "./signup.css";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -60,12 +59,21 @@ const Signup = () => {
           />
           <br />
           <div style={{ marginTop: "20px" }}>
-            <Button variant="contained"onClick={() => {
+            <Button
+              variant="contained"
+              onClick={() => {
                 confirm("Are You Sure ?");
-              }}>Cancle</Button>
-            <Button style={{ marginLeft: "35px" }} variant="contained" onClick={() => {
+              }}
+            >
+              Cancle
+            </Button>
+            <Button
+              style={{ marginLeft: "35px" }}
+              variant="contained"
+              onClick={() => {
                 confirm("Press Ok to Sign-Up.");
-              }}>
+              }}
+            >
               Sign Up
             </Button>
           </div>

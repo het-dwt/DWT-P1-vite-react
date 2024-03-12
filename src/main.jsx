@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import App from "./App.jsx";
-import App2 from "./app2.jsx";
+import App2 from "./App2.jsx";
 // import "./index.css";
 // import Profile from "./navbar/myprofile.jsx";
 import { StyledEngineProvider } from "@mui/material/styles";
