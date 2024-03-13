@@ -1,6 +1,5 @@
 import "./App2.css";
 import Home from "./navbar/home";
-import Clock from "./navbar/clock";
 import About from "./navbar/about";
 import Layout from "./navbar/layout";
 import Signup from "./navbar/signup";
@@ -8,9 +7,12 @@ import Signin from "./navbar/signin";
 import Contact from "./navbar/contact";
 import Apidata from "./navbar/apiData";
 import Profile from "./navbar/myprofile";
-import Setting from "./navbar/setting";
-import AvatarMenu from "./navbar/avatarMenu";
+
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Clock from "./utilities/clock";
+import Setting from "./utilities/setting";
+import AvatarMenu from "./utilities/avatarMenu";
 
 export default function App2() {
   return (

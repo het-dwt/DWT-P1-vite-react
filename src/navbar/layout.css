@@ -43,3 +43,8 @@
   padding-top: 10px;
   padding-right: 15px;
 }
+#clockPaperParent {
+  width: auto;
+  padding: 5px;
+  padding-left: 8px;
+}

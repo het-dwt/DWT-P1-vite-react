@@ -1,16 +1,15 @@
 import "./layout.css";
-import Clock from "./clock";
-import AvatarMenu from "./avatarMenu";
+import Clock from "../utilities/clock";
+import AvatarMenu from "../utilities/avatarMenu";
 import Paper from "@mui/material/Paper";
-
 import { Link, Outlet } from "react-router-dom";
 const Layout = () => {
   return (
     <>
       <header>
         <div className="mainNavbar">
-          <div id="clockParent">
-            <Paper elevation={4}>
+          <div id="clockPaperParent">
+            <Paper elevation={4} square>
               <Clock />
             </Paper>
           </div>

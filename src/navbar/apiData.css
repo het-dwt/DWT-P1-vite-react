@@ -23,8 +23,8 @@
   background-color: #3f738080;
 }
 #tableImage {
-  width: 100px;
-  height: 100px;
+  width: 5em;
+  height: 5em;
   border-radius: 15px;
   border: 1px solid black;
 }
