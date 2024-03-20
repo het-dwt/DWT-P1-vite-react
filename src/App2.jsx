@@ -1,7 +1,7 @@
 import "./App2.css";
 import Home from "./navbar/home";
 import About from "./navbar/about";
-import Todo from "./utilities/todo";
+// import Todo from "./utilities/todo";
 import Layout from "./navbar/layout";
 import Signup from "./navbar/signup";
 import Signin from "./navbar/signin";
@@ -12,6 +12,7 @@ import Profile from "./navbar/myprofile";
 import Setting from "./utilities/setting";
 import AvatarMenu from "./utilities/avatarMenu";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Todo from "./utilities/todo";
 
 export default function App2() {
   return (

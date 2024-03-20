@@ -4,16 +4,30 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-
-.todo-app {
-  padding: 1em;
+.todo-app-input-parent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.todo-app-input {
+  width: 98%;
+  padding: 0.5em;
   margin-top: 6em;
-  width: fit-content;
+}
+.todo-app-input-elem {
+  gap: 0.5em;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.todo-app-list {
+  padding: 1em;
 }
 
 .todo-app-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -41,4 +55,17 @@
 
 .del-btn-wrapper {
   padding: auto;
+}
+
+.edit-btn-wrapper {
+  padding: auto;
+}
+
+.form {
+  gap: 0.8em;
+  margin: 1em;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
