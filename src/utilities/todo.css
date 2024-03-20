@@ -16,10 +16,10 @@
 }
 .todo-app-input-elem {
   gap: 0.5em;
-  width: 95%;
+  width: 80%;
   display: flex;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
 }
 .todo-app-list {
   padding: 1em;

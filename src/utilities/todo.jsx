@@ -1,12 +1,16 @@
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import EditNoteIcon from "@mui/icons-material/EditNote";
+import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+
 import {
+  Alert,
   Button,
   Divider,
   InputAdornment,
   Paper,
+  Snackbar,
   TextField,
 } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -22,9 +26,11 @@ export default function Todo() {
     }
   });
   const [todo, setTodo] = useState("");
-
   const [isEditing, setIsEditing] = useState(false);
   const [currentTodo, setCurrentTodo] = useState({});
+  const [openAddAlert, setOpenAddAlert] = useState(false);
+  const [openDeleteAlert, setOpenDeleteAlert] = useState(false);
+  // const [openUpdateAlert, setOpenUpdateAlert] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -55,6 +61,42 @@ export default function Todo() {
     setTodo("");
   }
 
+  const handleAddClick = () => {
+    setOpenAddAlert(true);
+  };
+
+  const handleAddClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenAddAlert(false);
+  };
+
+  // const handleDeleteClick = () => {
+  //   setOpenDeleteAlert(true);
+  // };
+
+  const handleDeleteClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenDeleteAlert(false);
+  };
+
+  // const handleUpdateClick = () => {
+  //   setOpenAddAlert(true);
+  // };
+
+  // const handleUpdateClose = (event, reason) => {
+  //   if (reason === "clickaway") {
+  //     return;
+  //   }
+
+  //   setOpenUpdateAlert(false);
+  // };
+
   function handleEditFormSubmit(e) {
     e.preventDefault();
 
@@ -65,6 +107,7 @@ export default function Todo() {
     const removeItem = todos.filter((todo) => {
       return todo.id !== id;
     });
+    setOpenDeleteAlert(true);
     setTodos(removeItem);
   }
   function handleUpdateTodo(id, updatedTodo) {
@@ -79,6 +122,7 @@ export default function Todo() {
 
   function handleEditClick(todo) {
     setIsEditing(true);
+    // setOpenUpdateAlert(true);
 
     setCurrentTodo({ ...todo });
   }
@@ -88,18 +132,19 @@ export default function Todo() {
       {isEditing ? (
         <div className="todo-app-input-parent">
           <div className="todo-app-input">
-            <Paper elevation={6} square>
+            <h2>Todo</h2>
+            <Paper elevation={6}>
               <form onSubmit={handleEditFormSubmit} className="form">
-                <div className="todo-app-input-elem">
+                {/* <div className="todo-app-input-elem">
                   <label htmlFor="editTodo">Edit todo: </label>
-                </div>
+                </div> */}
                 <div className="todo-app-input-elem">
                   <TextField
                     fullWidth
                     type="text"
                     value={currentTodo.text}
                     size="small"
-                    label="Edit Todo"
+                    label="Edit List Here"
                     variant="standard"
                     id="standard-size-small"
                     onChange={handleEditInputChange}
@@ -112,10 +157,31 @@ export default function Todo() {
                     }}
                   />
                 </div>
-                <div className="todo-app-input-elem">
-                  <Button type="submit" variant="contained">
+                <div
+                  className="todo-app-input-elem"
+                  style={{ flexDirection: "row" }}
+                >
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    // onClick={handleUpdateClick}
+                  >
                     Update
                   </Button>
+                  {/* <Snackbar
+                    open={openUpdateAlert}
+                    autoHideDuration={3000}
+                    onClose={handleUpdateClose}
+                  >
+                    <Alert
+                      onClose={handleUpdateClose}
+                      severity="info"
+                      variant="filled"
+                      sx={{ width: "100%" }}
+                    >
+                      List Updated Sucessfully.
+                    </Alert>
+                  </Snackbar> */}
                   <Button
                     onClick={() => setIsEditing(false)}
                     variant="contained"
@@ -130,34 +196,56 @@ export default function Todo() {
       ) : (
         <div className="todo-app-input-parent">
           <div className="todo-app-input">
-            <Paper elevation={6} square>
+            <h2>Todo</h2>
+            <Paper elevation={2} square>
               <form onSubmit={handleFormSubmit} className="form">
-                <div className="todo-app-input-elem">
-                  <label htmlFor="todo">Add todo: </label>
-                </div>
+                {/* <div className="todo-app-input-elem">
+                  <label htmlFor="todo">{todo.id ? "Edit" : "Add"} todo:</label>
+                </div> */}
                 <div className="todo-app-input-elem">
                   <TextField
                     fullWidth
                     type="text"
                     value={todo}
                     size="small"
-                    label="Edit Todo"
+                    label="Write List Here"
                     variant="standard"
                     id="standard-size-small"
                     onChange={handleInputChange}
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
-                          <EditNoteIcon />
+                          <PlaylistAddIcon />
                         </InputAdornment>
                       ),
                     }}
                   />
                 </div>
-                <div className="todo-app-input-elem">
-                  <Button type="submit" variant="contained">
+                <div
+                  className="todo-app-input-elem"
+                  style={{ flexDirection: "row" }}
+                >
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    onClick={handleAddClick}
+                  >
                     Add
                   </Button>
+                  <Snackbar
+                    open={openAddAlert}
+                    autoHideDuration={3000}
+                    onClose={handleAddClose}
+                  >
+                    <Alert
+                      onClose={handleAddClose}
+                      severity="success"
+                      variant="filled"
+                      sx={{ width: "100%" }}
+                    >
+                      List Added Sucessfully.
+                    </Alert>
+                  </Snackbar>
                 </div>
               </form>
             </Paper>
@@ -165,7 +253,7 @@ export default function Todo() {
         </div>
       )}
       <div className="todo-app-list">
-        <Paper elevation={6} square>
+        <Paper elevation={2} square>
           <ul className="todo-list">
             {todos.map((todo) => (
               <li key={todo.id} className="todo-listitem">
@@ -182,6 +270,20 @@ export default function Todo() {
                   <Button onClick={() => handleDeleteClick(todo.id)}>
                     <DeleteIcon fontSize="small" />
                   </Button>
+                  <Snackbar
+                    open={openDeleteAlert}
+                    autoHideDuration={3000}
+                    onClose={handleDeleteClose}
+                  >
+                    <Alert
+                      onClose={handleDeleteClose}
+                      severity="error"
+                      variant="filled"
+                      sx={{ width: "100%" }}
+                    >
+                      List Deleted Sucessfully !
+                    </Alert>
+                  </Snackbar>
                 </div>
               </li>
             ))}
