@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS";
+}
+
+.App-header {
+  width: auto;
+  height: auto;
+  display: flex;
+  background: #1b82c7;
+  color: rgb(255, 255, 255);
+}
+
+.App-footer {
+  width: auto;
+  height: auto;
+  display: flex;
+  background: #f8fcff;
+  color: rgb(66, 66, 66);
+}
+
+.nav-wrapper {
+  margin: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content-logo-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.content-text {
+  margin: 0.2em;
+  padding: 0.2em;
+}
+.content-logo {
+  margin: 0.2em;
+  padding: 0.2em;
+}

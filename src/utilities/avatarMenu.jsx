@@ -11,7 +11,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import SettingsIcon from "@mui/icons-material/Settings";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-// import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 
 export default function AvatarMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -50,6 +50,13 @@ export default function AvatarMenu() {
           <AccountCircleIcon /> &nbsp;
           <Link to="/myprofile" style={{ textDecoration: "none" }}>
             Profile
+          </Link>
+        </MenuItem>
+        <Divider />
+        <MenuItem onClick={handleClose}>
+          <FormatListBulletedIcon /> &nbsp;
+          <Link to="/todo" style={{ textDecoration: "none" }}>
+            Todo List
           </Link>
         </MenuItem>
         <Divider />

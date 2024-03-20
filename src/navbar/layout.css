@@ -6,14 +6,14 @@
 #navTab {
   width: 100%;
   display: flex;
-  padding-top: 22px;
+  align-items: center;
   text-decoration: none;
   justify-content: center;
   text-decoration-line: none;
 }
 .mainNavbar {
   top: 0;
-  gap: 80px;
+  gap: 4em;
   z-index: 1;
   width: 100%;
   height: auto;
@@ -39,10 +39,15 @@
   display: flex;
   justify-content: center;
 }
-#avatar {
+#nav-right {
+  gap: 1em;
+  display: flex;
   padding-top: 10px;
   padding-right: 15px;
+  align-items: center;
+  flex-direction: row;
 }
+
 #clockPaperParent {
   width: auto;
   padding: 5px;

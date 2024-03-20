@@ -2,22 +2,28 @@ import "./apiData.css";
 import axios from "axios";
 import Table from "@mui/material/Table";
 import Paper from "@mui/material/Paper";
-import Rating from "@mui/material/Rating";
 import "../navbar/paginationRounded.css";
+import Rating from "@mui/material/Rating";
 import { useEffect, useState } from "react";
 import TableRow from "@mui/material/TableRow";
 import TableHead from "@mui/material/TableHead";
 import TableCell from "@mui/material/TableCell";
 import TableBody from "@mui/material/TableBody";
+// import IconButton from "@mui/material/IconButton";
 import TableContainer from "@mui/material/TableContainer";
-import { Pagination, Stack, Typography } from "@mui/material";
+import { Button, Pagination, Stack, Typography } from "@mui/material";
+// import AddShoppingCartSharpIcon from "@mui/icons-material/AddShoppingCartSharp";
 
 function Apidata() {
-  const [apiData, setApiData] = useState({ products: [] });
-  const [page, setPage] = useState(1);
+  const [badgeContent, setbadgeContent] = useState(0);
   const itemsPerPage = 4;
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
-
+  const [apiData, setApiData] = useState({ products: [] });
+  function increment() {
+    setbadgeContent((c) => c + 1);
+  }
+  console.log(badgeContent);
   useEffect(() => {
     axios
       .get("https://dummyjson.com/products")
@@ -65,6 +71,7 @@ function Apidata() {
                   <TableCell align="center">
                     <label id="label">Price</label>
                   </TableCell>
+                  <TableCell align="center"></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -79,7 +86,6 @@ function Apidata() {
                         id="tableImage"
                         style={{ borderRadius: "10px" }}
                       />
-                      {/* <h6>{o.brand}</h6> */}
                     </TableCell>
                     <TableCell align="center">
                       {o.title} <h6>[{o.stock} in stock.]</h6>
@@ -96,6 +102,17 @@ function Apidata() {
                     </TableCell>
                     <TableCell align="center">
                       {o.price} $<h6>({o.discountPercentage} % off.)</h6>
+                    </TableCell>
+                    <TableCell align="center">
+                      {/* <IconButton
+                        data={badgeContent}
+                        onClick={() => increment()}
+                        color="primary"
+                        aria-label="add to shopping cart"
+                      >
+                        <AddShoppingCartSharpIcon />
+                      </IconButton> */}
+                      <Button  variant="contained" onClick={() => increment()}>Add To Cart</Button>
                     </TableCell>
                   </TableRow>
                 ))}

@@ -1,7 +1,8 @@
 import "./layout.css";
+import Cart from "../utilities/cart";
 import Clock from "../utilities/clock";
-import AvatarMenu from "../utilities/avatarMenu";
 import Paper from "@mui/material/Paper";
+import AvatarMenu from "../utilities/avatarMenu";
 import { Link, Outlet } from "react-router-dom";
 const Layout = () => {
   return (
@@ -21,7 +22,7 @@ const Layout = () => {
               <Link to="/about">About</Link>
             </h4>
             <h4 id="navTab">
-              <Link to="/apiData">Api-Data</Link>
+              <Link to="/apiData">Shop</Link>
             </h4>
             <h4 id="navTab">
               <Link to="/contact">Contact</Link>
@@ -30,7 +31,8 @@ const Layout = () => {
               <Link to="/signup">Login</Link>
             </h4>
           </div>
-          <div id="avatar">
+          <div id="nav-right">
+            <Cart />
             <AvatarMenu />
           </div>
         </div>

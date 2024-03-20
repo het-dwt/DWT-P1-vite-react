@@ -1,0 +1,28 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+.header-wrapper {
+  z-index: 1;
+  width: 100%;
+  margin: 1px;
+  padding: 1px;
+  display: flex;
+  /* position: fixed; */
+  justify-content: center;
+}
+.header-content {
+  width: 100%;
+  margin: 1px;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content {
+  gap: 0.5em;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  align-items: center;
+}

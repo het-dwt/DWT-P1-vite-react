@@ -1,0 +1,12 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.navigation-wrapper {
+  gap: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
