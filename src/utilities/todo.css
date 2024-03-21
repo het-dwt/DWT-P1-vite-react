@@ -9,8 +9,13 @@
   align-items: center;
   flex-direction: column;
 }
+.todo-app-list-parent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .todo-app-input {
-  width: 98%;
+  width: 60%;
   padding: 0.5em;
   margin-top: 6em;
 }
@@ -23,6 +28,7 @@
 }
 .todo-app-list {
   padding: 1em;
+  width: 70%;
 }
 
 .todo-app-wrapper {
@@ -32,7 +38,7 @@
 }
 
 .todo-list {
-  width: 100%;
+  width: 65%;
   display: flex;
   justify-content: center;
   flex-direction: column-reverse;
