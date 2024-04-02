@@ -1,0 +1,79 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.home-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-parent-div {
+  gap: 1em;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+}
+.home-content-div {
+  width: 95%;
+}
+
+/* .table-cell-data { */
+/* width:fit-content; */
+/* height: fit-content; */
+/* display: flex;
+  align-items: center;
+  flex-direction: column; */
+/* } */
+
+.content-logo {
+  margin: 0.2em;
+  padding: 0.2em;
+}
+
+.table {
+  border: 1px solid rgb(179, 189, 189);
+}
+
+#icon-parent {
+  gap: 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#pricing-cell-parent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#pricing-cell {
+  margin: 0.5em;
+  padding: 0.5em;
+  border-radius: 5px;
+  /* border: 1px solid rgb(117, 154, 255); */
+  background-color: rgb(232, 244, 255);
+}
+#Table-head {
+  background-color: rgb(235, 239, 241);
+}
+
+.table-head-cell {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.add-more-btn {
+  display: flex;
+  margin: 0.2em;
+  padding: 0.2em;
+  align-items: center;
+  flex-direction: row;
+}

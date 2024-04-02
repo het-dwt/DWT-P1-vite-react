@@ -1,24 +1,32 @@
 import "./ECommerceApp.css";
-// import NavTabs from "../body/body";
 import logo from "../header/logo/react.svg";
 import UserAccount from "../header/userAcc/user-acc";
 import LabTabs from "../body/body";
+import { Grid } from "@mui/material";
+// import NavTabs from "../body/body";
 
 function ECommerceApp() {
   return (
     <div className="App">
-      <div className="nav-wrapper" style={{ color: "black" }}>
-        <div className="content-logo-text">
+      <Grid container className="nav-wrapper" style={{ color: "black" }}>
+        <Grid xs={4} md={4} lg={4} className="content-logo-text">
           <img src={logo} className="content-logo" alt="logo" />
           <div className="content-text">React</div>
-        </div>
-        <body className="content-navtab">
-          <LabTabs />
-        </body>
-        <div className="content-useracc">
+        </Grid>
+        <Grid xs={4} md={4} lg={4} className="content-navtab">
+          {/* <LabTabs /> */}Header
+        </Grid>
+        <Grid xs={4} md={4} lg={4} className="content-useracc">
           <UserAccount />
-        </div>
-      </div>
+        </Grid>
+      </Grid>
+      <body className="content-data-wrapper">
+        <Grid container className="content-data">
+          <Grid xs={12} md={12} lg={12}>
+            <LabTabs />
+          </Grid>
+        </Grid>
+      </body>
 
       <footer className="App-footer"></footer>
     </div>
@@ -26,3 +34,5 @@ function ECommerceApp() {
 }
 
 export default ECommerceApp;
+
+//How to Add GIT Credentials globally in VSCode?

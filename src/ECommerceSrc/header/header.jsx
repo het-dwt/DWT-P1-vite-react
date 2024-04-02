@@ -1,7 +1,8 @@
+// import { Outlet } from "react-router-dom";
 import "../header/header.css";
 import logo from "../header/logo/react.svg";
 import UserAccount from "./userAcc/user-acc";
-import { Navigation } from "./navigation/navigation";
+
 
 export function Header() {
   return (
@@ -12,9 +13,9 @@ export function Header() {
             <img src={logo} className="content-logo" alt="logo" />
           </div>
           <div className="content-name">React</div>
-        </div>
-        <div className="content">
-          <Navigation />
+          <div className="content">
+            {/* <Outlet /> */}
+          </div>
         </div>
         <div className="content">
           <UserAccount />

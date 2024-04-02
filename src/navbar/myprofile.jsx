@@ -1,18 +1,29 @@
 import "./myprofile.css";
+import download from "downloadjs";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Avatar from "@mui/material/Avatar";
+import { useEffect, useState } from "react";
 import { Button, TextField } from "@mui/material";
-import SourceIcon from '@mui/icons-material/Source';
+import SourceIcon from "@mui/icons-material/Source";
+import DownloadIcon from "@mui/icons-material/Download";
 
 const Profile = () => {
+  const [date, setDate] = useState(new Date());
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDate(new Date());
+    }, 500);
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="profile-outerDiv">
       <Box className="profile" sx={{ width: "100%" }}>
-        <Grid container direction="row" spacing={1}>
-          <Grid xs="6" md="4" className="main-profile-wrapper">
-            <Paper elevation={2} square>
+        <Grid container direction="row" spacing={2}>
+          <Grid xs="12" md="4" className="main-profile-wrapper">
+            <Paper elevation={2}>
               <div className="main-profile">
                 <div className="main-profile-details">
                   <p className="main-profile-avatar">
@@ -26,19 +37,19 @@ const Profile = () => {
                 </div>
                 <div className="main-profile-details">
                   <p className="main-profile-cotent">Name: Het Gajjar</p>
-
                   <p className="main-profile-cotent">Email: abc@gmail.com</p>
-
                   <p className="main-profile-cotent">Designation: Intern</p>
                 </div>
               </div>
             </Paper>
-            <Paper elevation={2} square>
+            <Paper elevation={2}>
               <div className="main-profile-details">
                 <p className="main-profile-cotent"> Project Status </p>
                 <div className="main-profile-details">
                   <div className="main-profile-cotent-wrapper">
-                    <p className="main-profile-cotent"><SourceIcon /> #project-1</p>
+                    <p className="main-profile-cotent">
+                      <SourceIcon /> #project-1
+                    </p>
                     <div
                       style={{
                         height: "5px",
@@ -60,7 +71,9 @@ const Profile = () => {
                     ></div>
                   </div>
                   <div className="main-profile-cotent-wrapper">
-                    <p className="main-profile-cotent"><SourceIcon /> #project-2</p>
+                    <p className="main-profile-cotent">
+                      <SourceIcon /> #project-2
+                    </p>
                     <div
                       style={{
                         height: "5px",
@@ -82,11 +95,13 @@ const Profile = () => {
                     ></div>
                   </div>
                   <div className="main-profile-cotent-wrapper">
-                    <p className="main-profile-cotent"><SourceIcon /> #project-3</p>
+                    <p className="main-profile-cotent">
+                      <SourceIcon /> #project-3
+                    </p>
                     <div
                       style={{
                         height: "5px",
-                        width: "60%",
+                        width: "70%",
                         backgroundColor: "#3B9932",
                         borderTopLeftRadius: "5px",
                         borderTopRightRadius: "5px",
@@ -107,9 +122,9 @@ const Profile = () => {
               </div>
             </Paper>
           </Grid>
-          <Grid xs="6" md="4" className="main-profile-wrapper">
+          <Grid xs="12" md="4" className="main-profile-wrapper">
             <form>
-              <Paper elevation={2} square>
+              <Paper elevation={2}>
                 <div id="update-content-wrapper">
                   <label className="label">Edit Profile</label>
                   <div id="update-content">
@@ -159,11 +174,29 @@ const Profile = () => {
               </Paper>
             </form>
           </Grid>
-          <Grid xs="6" md="4" className="main-profile-wrapper">
-            <Paper elevation={2} square>
+          <Grid xs="12" md="4" className="main-profile-wrapper">
+            <Paper elevation={2}>
               <div className="main-profile">
-                <div className="main-profile-details">
-                  {/* <p className="main-profile-cotent">Name: Het Gajjar</p> */}
+                <div className="main-profile-details" id="dwd">
+                  <div>
+                    <small>Download</small>
+                  </div>
+                  <div>
+                    <Button
+                      style={{ width: "auto" }}
+                      variant="contained"
+                      size="small"
+                      onClick={() => {
+                        download(
+                          `${date.toLocaleTimeString()} || ${date.toLocaleDateString()}`,
+                          "text.txt",
+                          "text/plain"
+                        );
+                      }}
+                    >
+                      <DownloadIcon fontSize="small" />
+                    </Button>
+                  </div>
                 </div>
               </div>
             </Paper>

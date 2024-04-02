@@ -26,8 +26,8 @@ export default function Todo() {
   const [todo, setTodo] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [currentTodo, setCurrentTodo] = useState({});
-  const [openAddAlert, setOpenAddAlert] = useState(false);
   const [openDeleteAlert, setOpenDeleteAlert] = useState(false);
+  const [openAddAlert, setOpenAddAlert] = useState(false);
   const [openUpdateAlert, setOpenUpdateAlert] = useState(false);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export default function Todo() {
   }
 
   const handleAddClick = () => {
-    setOpenAddAlert(true);
+    setOpenAddAlert(todo !== "" ? true : false);
   };
 
   const handleAddClose = (event, reason) => {
@@ -95,8 +95,10 @@ export default function Todo() {
     const removeItem = todos.filter((todo) => {
       return todo.id !== id;
     });
-    setOpenDeleteAlert(true);
-    setTodos(removeItem);
+    if (removeItem) {
+      setTodos(removeItem);
+      setOpenDeleteAlert(true);
+    }
   }
 
   function handleUpdateTodo(id, updatedTodo) {
@@ -113,6 +115,51 @@ export default function Todo() {
   }
   return (
     <div className="todo-app-wrapper">
+      <div className="todo-app-list-parent">
+        <div className="todo-app-list">
+          <Paper elevation={2} square>
+            <ul className="todo-list">
+              {todos.map((todo) => (
+                <li key={todo.id} className="todo-listitem">
+                  <ChevronRightIcon />
+                  {todo.text}
+                  <Divider orientation="vertical" flexItem />
+                  <div className="edit-btn-wrapper">
+                    <EditIcon
+                      fontSize="small"
+                      color="primary"
+                      onClick={() => handleEditClick(todo)}
+                    />
+                  </div>
+                  <Divider orientation="vertical" flexItem />
+                  <div className="del-btn-wrapper">
+                    <DeleteIcon
+                      fontSize="small"
+                      color="error"
+                      onClick={() => handleDeleteClick(todo.id)}
+                    />
+
+                    <Snackbar
+                      open={openDeleteAlert}
+                      autoHideDuration={1000}
+                      onClose={handleDeleteClose}
+                    >
+                      <Alert
+                        onClose={handleDeleteClose}
+                        severity="error"
+                        variant="filled"
+                        sx={{ width: "100%" }}
+                      >
+                        List Deleted Sucessfully !
+                      </Alert>
+                    </Snackbar>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </Paper>
+        </div>
+      </div>
       <div className="todo-app-input-parent">
         <div className="todo-app-input">
           <h2>{isEditing ? "Edit" : "Add"} Todo List</h2>
@@ -134,8 +181,8 @@ export default function Todo() {
                     isEditing ? handleEditInputChange : handleInputChange
                   }
                   InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
+                    startAdornment: (
+                      <InputAdornment position="start">
                         {isEditing ? <EditNoteIcon /> : <PlaylistAddIcon />}
                       </InputAdornment>
                     ),
@@ -155,7 +202,7 @@ export default function Todo() {
                 </Button>
                 <Snackbar
                   open={isEditing ? openUpdateAlert : openAddAlert}
-                  autoHideDuration={3000}
+                  autoHideDuration={1000}
                   onClose={isEditing ? handleUpdateClose : handleAddClose}
                 >
                   <Alert
@@ -177,46 +224,6 @@ export default function Todo() {
                 </Button>
               </div>
             </form>
-          </Paper>
-        </div>
-      </div>
-      <div className="todo-app-list-parent">
-        <div className="todo-app-list">
-          <Paper elevation={2} square>
-            <ul className="todo-list">
-              {todos.map((todo) => (
-                <li key={todo.id} className="todo-listitem">
-                  <ChevronRightIcon />
-                  {todo.text}
-                  <Divider orientation="vertical" flexItem />
-                  <div className="edit-btn-wrapper">
-                    <Button onClick={() => handleEditClick(todo)}>
-                      <EditIcon fontSize="small" />
-                    </Button>
-                  </div>
-                  <Divider orientation="vertical" flexItem />
-                  <div className="del-btn-wrapper">
-                    <Button onClick={() => handleDeleteClick(todo.id)}>
-                      <DeleteIcon fontSize="small" />
-                    </Button>
-                    <Snackbar
-                      open={openDeleteAlert}
-                      autoHideDuration={3000}
-                      onClose={handleDeleteClose}
-                    >
-                      <Alert
-                        onClose={handleDeleteClose}
-                        severity="error"
-                        variant="filled"
-                        sx={{ width: "100%" }}
-                      >
-                        List Deleted Sucessfully !
-                      </Alert>
-                    </Snackbar>
-                  </div>
-                </li>
-              ))}
-            </ul>
           </Paper>
         </div>
       </div>

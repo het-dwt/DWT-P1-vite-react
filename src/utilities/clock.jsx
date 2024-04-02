@@ -13,7 +13,7 @@ function Clock() {
   }, []);
 
   return (
-    <div id="clockParent" >
+    <div id="clockParent">
       <small className="clock">{date.toLocaleTimeString()}</small>
       <br /> <small className="clock">{date.toLocaleDateString()}</small>
     </div>

@@ -1,69 +1,51 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
+import About from "./about/about";
+import Contact from "./contact/contact";
+import Home from "./home/home";
+import Shop from "./shop/shop";
+// import ProductList from "./home/addProducts";
 
-function samePageLinkNavigation(event) {
-  if (
-    event.defaultPrevented ||
-    event.button !== 0 || // ignore everything but left-click
-    event.metaKey ||
-    event.ctrlKey ||
-    event.altKey ||
-    event.shiftKey
-  ) {
-    return false;
-  }
-  return true;
-}
-
-function LinkTab(props) {
-  return (
-    <Tab
-      component="a"
-      onClick={(event) => {
-        // Routing libraries handle this, you can remove the onClick handle when using them.
-        if (samePageLinkNavigation(event)) {
-          event.preventDefault();
-        }
-      }}
-      aria-current={props.selected && 'page'}
-      {...props}
-    />
-  );
-}
-
-LinkTab.propTypes = {
-  selected: PropTypes.bool,
-};
-
-export default function NavTabs() {
-  const [value, setValue] = React.useState(0);
+export default function LabTabs() {
+  const [value, setValue] = React.useState("1");
 
   const handleChange = (event, newValue) => {
-    // event.type can be equal to focus with selectionFollowsFocus.
-    if (
-      event.type !== 'click' ||
-      (event.type === 'click' && samePageLinkNavigation(event))
-    ) {
-      setValue(newValue);
-    }
+    setValue(newValue);
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        aria-label="nav tabs example"
-        role="navigation"
-      >
-        <LinkTab label="Home" href="/home" />
-        <LinkTab label="Shop" href="/shop" />
-        <LinkTab label="About" href="/about" />
-        <LinkTab label="Contact" href="/contact" />
-      </Tabs>
+    <Box sx={{ width: "100%", typography: "body1" }}>
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <TabList
+            onChange={handleChange}
+            aria-label="lab API tabs example"
+            centered
+          >
+            <Tab label="Home" value="1" />
+            <Tab label="Contact" value="2" />
+            <Tab label="About" value="3" />
+            <Tab label="Shop" value="4" />
+          </TabList>
+        </Box>
+        <TabPanel value="1">
+          <Home />
+          {/* <ProductList /> */}
+        </TabPanel>
+        <TabPanel value="2">
+          <Contact />
+        </TabPanel>
+        <TabPanel value="3">
+          <About />
+        </TabPanel>
+        <TabPanel value="4">
+          <Shop />
+        </TabPanel>
+      </TabContext>
     </Box>
   );
 }

@@ -48,15 +48,61 @@
 // export default App;
 
 //(3)....Using_Axios-Package.
+// import { useEffect, useState } from "react";
+// import axios from "axios";
+
+// function App() {
+//   const [apiData, setApiData] = useState([]);
+//   useEffect(() => {
+//     axios.get("https://dummyjson.com/products").then((response) => {
+//       console.log(response.data);
+//       setApiData(response.data);
+//     });
+//   }, []);
+
+//   return (
+//     <div>
+//       <div>
+//         <table border="1">
+//           <thead>
+//             <tr>
+//               <th>Sr:</th>
+//               <th>Product</th>
+//               <th>Product Name:</th>
+//               <th>Rating:</th>
+//               <th>Price:</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {apiData.products?.map((o) => (
+//               <tr key={o.id}>
+//                 <td>{o.id}</td>
+//                 <td>
+//                   <img src={o.thumbnail} width="80" />
+//                 </td>
+//                 <td>{o.title}</td>
+//                 <td>{o.rating}/5</td>
+//                 <td>{o.price}/-</td>
+//               </tr>
+//             ))}
+//           </tbody>
+
+//         </table>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+//(3)....Using_Axios-Package.
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Button } from "@mui/material";
 
 function App() {
   const [apiData, setApiData] = useState([]);
   useEffect(() => {
     axios.get("https://dummyjson.com/products").then((response) => {
-      console.log(response.data);
       setApiData(response.data);
     });
   }, []);
@@ -64,33 +110,17 @@ function App() {
   return (
     <div>
       <div>
-        <Button variant="contained" color="primary" 
-                size="large"> Click!</Button>
-        <table border="1">
-          <thead>
-            <tr>
-              <th>Sr:</th>
-              <th>Product</th>
-              <th>Product Name:</th>
-              <th>Rating:</th>
-              <th>Price:</th>
-            </tr>
-          </thead>
-          <tbody>
-            {apiData.products?.map((o) => (
-              <tr key={o.id}>
-                <td>{o.id}</td>
-                <td>
-                  <img src={o.thumbnail} width="80" />
-                </td>
-                <td>{o.title}</td>
-                <td>{o.rating}/5</td>
-                <td>{o.price}/-</td>
-              </tr>
-            ))}
-          </tbody>
-          
-        </table>
+        {apiData.products?.map((o) => (
+          <div className="Product" key={o.id}>
+            <p className="Product-p">{o.id}</p>
+            <div className="Product-img">
+              <img src={o.thumbnail} width="80" />
+            </div>
+            <div className="Product-title">{o.title}</div>
+            <div className="Product-rating">{o.rating}/5</div>
+            <div className="Product-rating">{o.price}/-</div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,0 +1,77 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.product-input-parent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.product-list-parent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.product-input {
+  width: 60%;
+  padding: 0.5em;
+  margin-top: 6em;
+}
+.product-input-elem {
+  gap: 0.5em;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/* .product-list {
+    padding: 1em;
+    width: 70%;
+  } */
+
+.product-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.product-listitem {
+  gap: 0.7em;
+  display: flex;
+  margin: 0.25em;
+  padding: 0.25em;
+  align-items: center;
+  flex-direction: row;
+  /* justify-content: center; */
+}
+
+.form {
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+.del-btn-wrapper {
+  padding: auto;
+}
+
+.edit-btn-wrapper {
+  padding: auto;
+}
+
+.form {
+  gap: 0.8em;
+  margin: 1em;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
