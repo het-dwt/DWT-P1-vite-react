@@ -188,7 +188,7 @@ const Profile = () => {
                       size="small"
                       onClick={() => {
                         download(
-                          `${date.toLocaleTimeString()} || ${date.toLocaleDateString()}`,
+                          `${date.toLocaleTimeString()} | ${date.toLocaleDateString()}`,
                           "text.txt",
                           "text/plain"
                         );

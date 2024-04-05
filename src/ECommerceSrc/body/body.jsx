@@ -8,7 +8,7 @@ import About from "./about/about";
 import Contact from "./contact/contact";
 import Home from "./home/home";
 import Shop from "./shop/shop";
-// import ProductList from "./home/addProducts";
+import ProductList from "./home/addProducts";
 
 export default function LabTabs() {
   const [value, setValue] = React.useState("1");
@@ -34,7 +34,7 @@ export default function LabTabs() {
         </Box>
         <TabPanel value="1">
           <Home />
-          {/* <ProductList /> */}
+          <ProductList />
         </TabPanel>
         <TabPanel value="2">
           <Contact />

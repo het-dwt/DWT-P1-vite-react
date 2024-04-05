@@ -15,6 +15,12 @@ import EditNoteIcon from "@mui/icons-material/EditNote";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 export default function Todo() {
+  const [todo, setTodo] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
+  const [currentTodo, setCurrentTodo] = useState({});
+  const [openAddAlert, setOpenAddAlert] = useState(false);
+  const [openDeleteAlert, setOpenDeleteAlert] = useState(false);
+  const [openUpdateAlert, setOpenUpdateAlert] = useState(false);
   const [todos, setTodos] = useState(() => {
     const savedTodos = localStorage.getItem("todos");
     if (savedTodos) {
@@ -23,12 +29,6 @@ export default function Todo() {
       return [];
     }
   });
-  const [todo, setTodo] = useState("");
-  const [isEditing, setIsEditing] = useState(false);
-  const [currentTodo, setCurrentTodo] = useState({});
-  const [openDeleteAlert, setOpenDeleteAlert] = useState(false);
-  const [openAddAlert, setOpenAddAlert] = useState(false);
-  const [openUpdateAlert, setOpenUpdateAlert] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -40,7 +40,6 @@ export default function Todo() {
 
   function handleEditInputChange(e) {
     setCurrentTodo({ ...currentTodo, text: e.target.value });
-    // console.log(currentTodo);
   }
 
   function handleFormSubmit(e) {
