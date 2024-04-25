@@ -6,11 +6,13 @@
 #navTab {
   width: 100%;
   display: flex;
+  font-size: large;
   align-items: center;
   text-decoration: none;
   justify-content: center;
   text-decoration-line: none;
 }
+
 .mainNavbar {
   top: 0;
   gap: 4em;
@@ -28,17 +30,20 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+
 #navbar {
   width: 150vh;
   display: flex;
   font-size: small;
   justify-content: center;
 }
+
 .header {
   width: 100%;
   display: flex;
   justify-content: center;
 }
+
 #nav-right {
   gap: 1em;
   display: flex;

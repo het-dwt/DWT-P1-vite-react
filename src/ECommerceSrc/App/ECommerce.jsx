@@ -34,5 +34,3 @@ function ECommerceApp() {
 }
 
 export default ECommerceApp;
-
-//How to Add GIT Credentials globally in VSCode?

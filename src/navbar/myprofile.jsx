@@ -188,7 +188,7 @@ const Profile = () => {
                       size="small"
                       onClick={() => {
                         download(
-                          `${date.toLocaleTimeString()} | ${date.toLocaleDateString()}`,
+                          ` This txt. downloaded @ ${date.toLocaleTimeString()} on ${date.toLocaleDateString()} to check weather the module is working or not !`,
                           "text.txt",
                           "text/plain"
                         );

@@ -118,7 +118,7 @@ function App() {
             </div>
             <div className="Product-title">{o.title}</div>
             <div className="Product-rating">{o.rating}/5</div>
-            <div className="Product-rating">{o.price}/-</div>
+            <div className="Product-price">{o.price}/-</div>
           </div>
         ))}
       </div>
@@ -134,7 +134,7 @@ export default App;
 
 //(4)Async & await.....
 // import { useEffect } from "react";
-// import { useState } fsrom "react";
+// import { useState } from "react";
 // import axios from "axios";
 
 // function App() {

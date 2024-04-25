@@ -38,10 +38,10 @@
 }
 
 .todo-list {
-  width: 65%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
 .todo-listitem {
@@ -52,6 +52,11 @@
   align-items: center;
   flex-direction: row;
   /* justify-content: center; */
+}
+
+.main-h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: large;
 }
 
 .form {

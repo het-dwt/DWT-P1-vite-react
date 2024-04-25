@@ -1,7 +1,6 @@
 import {
   Alert,
   Button,
-  Divider,
   InputAdornment,
   Paper,
   Snackbar,
@@ -13,7 +12,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import DownloadIcon from "@mui/icons-material/Download";
+import download from "downloadjs";
+
 export default function Todo() {
   const [todo, setTodo] = useState("");
   const [isEditing, setIsEditing] = useState(false);
@@ -112,57 +113,15 @@ export default function Todo() {
     setIsEditing(true);
     setCurrentTodo({ ...todo });
   }
+  console.log(todos.length);
   return (
     <div className="todo-app-wrapper">
-      <div className="todo-app-list-parent">
-        <div className="todo-app-list">
-          <Paper elevation={2} square>
-            <ul className="todo-list">
-              {todos.map((todo) => (
-                <li key={todo.id} className="todo-listitem">
-                  <ChevronRightIcon />
-                  {todo.text}
-                  <Divider orientation="vertical" flexItem />
-                  <div className="edit-btn-wrapper">
-                    <EditIcon
-                      fontSize="small"
-                      color="primary"
-                      onClick={() => handleEditClick(todo)}
-                    />
-                  </div>
-                  <Divider orientation="vertical" flexItem />
-                  <div className="del-btn-wrapper">
-                    <DeleteIcon
-                      fontSize="small"
-                      color="error"
-                      onClick={() => handleDeleteClick(todo.id)}
-                    />
-
-                    <Snackbar
-                      open={openDeleteAlert}
-                      autoHideDuration={1000}
-                      onClose={handleDeleteClose}
-                    >
-                      <Alert
-                        onClose={handleDeleteClose}
-                        severity="error"
-                        variant="filled"
-                        sx={{ width: "100%" }}
-                      >
-                        List Deleted Sucessfully !
-                      </Alert>
-                    </Snackbar>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </Paper>
-        </div>
-      </div>
       <div className="todo-app-input-parent">
         <div className="todo-app-input">
-          <h2>{isEditing ? "Edit" : "Add"} Todo List</h2>
-          <Paper elevation={6}>
+          <div className="main-h1">
+            <h1>{isEditing ? "Edit" : "Add"} Todo List</h1>
+          </div>
+          <Paper variant="outlined">
             <form
               onSubmit={isEditing ? handleEditFormSubmit : handleFormSubmit}
               className="form"
@@ -194,7 +153,7 @@ export default function Todo() {
               >
                 <Button
                   type="submit"
-                  variant="contained"
+                  variant="text"
                   onClick={isEditing ? handleUpdateClick : handleAddClick}
                 >
                   {isEditing ? "Edit" : "Add"}
@@ -217,13 +176,72 @@ export default function Todo() {
                 </Snackbar>
                 <Button
                   onClick={() => (isEditing ? setIsEditing(false) : null)}
-                  variant="contained"
+                  variant="text"
                 >
                   Cancel
                 </Button>
               </div>
             </form>
           </Paper>
+        </div>
+      </div>
+      <div className="todo-app-list-parent">
+        <div className="todo-app-list">
+          <Paper variant="outlined">
+            <ul className="todo-list">
+              {todos.map((todo) => (
+                <li key={todo.id} className="todo-listitem">
+                  {todo.text}
+                  <div className="edit-btn-wrapper">
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      onClick={() => handleEditClick(todo)}
+                    >
+                      <EditIcon fontSize="small" color="primary" />
+                    </Button>
+                  </div>
+                  <div className="del-btn-wrapper">
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      onClick={() => handleDeleteClick(todo.id)}
+                    >
+                      <DeleteIcon fontSize="small" color="error" />
+                    </Button>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </Paper>
+          <Button
+            style={{ width: "auto", marginTop: "20px" }}
+            variant="outlined"
+            onClick={() => {
+              download(
+                `The count of Todo List is : ${todos.length}`,
+                "todoList",
+                "text/plain"
+              );
+            }}
+          >
+            <DownloadIcon fontSize="small" />
+            Download
+          </Button>
+          <Snackbar
+            open={openDeleteAlert}
+            autoHideDuration={1000}
+            onClose={handleDeleteClose}
+          >
+            <Alert
+              onClose={handleDeleteClose}
+              severity="error"
+              variant="filled"
+              sx={{ width: "100%" }}
+            >
+              List Deleted Sucessfully !
+            </Alert>
+          </Snackbar>
         </div>
       </div>
     </div>

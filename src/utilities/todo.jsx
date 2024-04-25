@@ -57,10 +57,10 @@ function TodoList() {
       <table>
         <tbody>
           {todos.map((todo) => (
-            <tr key={todos.id}>
-              <td>
-                {todo.inputFName}|{todo.inputLName}|{todo.inputDOB}
-              </td>
+            <tr key={todo.id}>
+              <td>{todo.inputFName}</td>
+              <td>{todo.inputLName}</td>
+              <td>{todo.inputDOB}</td>
               <td>
                 <button onClick={() => handleDelete(todo.id)}>Delete</button>
               </td>
