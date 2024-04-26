@@ -18,13 +18,12 @@ function Shop() {
           sm={3}
           md={2}
           lg={2}
-          xl={2}
+          xl={1}
           className="Product"
           key={obj.id}
         >
           <div>
-            {/*<p className="Product-p">{obj.id}</p>*/}
-            <div className="Product-img">
+            <div className="Product-img" style={{ borderRadius: "5px" }}>
               <img src={obj.thumbnail} width="80px" height="80px" />
             </div>
             <div className="Product-title">{obj.title}</div>

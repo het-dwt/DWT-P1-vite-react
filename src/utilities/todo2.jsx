@@ -7,19 +7,25 @@ import {
   TextField,
 } from "@mui/material";
 import "./todo.css";
+import download from "downloadjs";
 import { useEffect, useState } from "react";
+import Checkbox from "@mui/material/Checkbox";
+// import Divider from "@mui/material/Divider";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
+import PushPinIcon from "@mui/icons-material/PushPin";
 import EditNoteIcon from "@mui/icons-material/EditNote";
-import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+// import BookmarkIcon from "@mui/icons-material/Bookmark";
 import DownloadIcon from "@mui/icons-material/Download";
-import download from "downloadjs";
+import PlaylistAddIcon from "@mui/icons-material/PlaylistAdd";
+import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
 
 export default function Todo() {
   const [todo, setTodo] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [currentTodo, setCurrentTodo] = useState({});
   const [openAddAlert, setOpenAddAlert] = useState(false);
+  // const [labelCount, setLabelCount] = useState(0);
   const [openDeleteAlert, setOpenDeleteAlert] = useState(false);
   const [openUpdateAlert, setOpenUpdateAlert] = useState(false);
   const [todos, setTodos] = useState(() => {
@@ -30,7 +36,7 @@ export default function Todo() {
       return [];
     }
   });
-
+  const label = { inputProps: { "aria-label": "Checkbox demo" } };
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
@@ -91,6 +97,11 @@ export default function Todo() {
     handleUpdateTodo(currentTodo.id, currentTodo);
   }
 
+  // function handleLabelClick() {
+  //   ...label
+  //   label ? (setLabelCount = 1) : (setLabelCount = 0);
+  // }
+
   function handleDeleteClick(id) {
     const removeItem = todos.filter((todo) => {
       return todo.id !== id;
@@ -120,6 +131,12 @@ export default function Todo() {
         <div className="todo-app-input">
           <div className="main-h1">
             <h1>{isEditing ? "Edit" : "Add"} Todo List</h1>
+            <h1>
+              <b>
+                <u>2</u>
+              </b>{" "}
+              tasks were pinned.
+            </h1>
           </div>
           <Paper variant="outlined">
             <form
@@ -187,10 +204,20 @@ export default function Todo() {
       </div>
       <div className="todo-app-list-parent">
         <div className="todo-app-list">
-          <Paper variant="outlined">
+          <Paper variant="elevation">
             <ul className="todo-list">
-              {todos.map((todo) => (
+              {todos.map((todo, index) => (
                 <li key={todo.id} className="todo-listitem">
+                  <div
+                    style={{
+                      border: "1px solid #1976d2",
+                      borderRadius: "50%",
+                      margin: "3px",
+                      padding: "3px",
+                    }}
+                  >
+                    {index + 1}
+                  </div>
                   {todo.text}
                   <div className="edit-btn-wrapper">
                     <Button
@@ -210,7 +237,15 @@ export default function Todo() {
                       <DeleteIcon fontSize="small" color="error" />
                     </Button>
                   </div>
+                  <div className="bm-btn-wrapper">
+                    <Checkbox
+                      {...label}
+                      icon={<PushPinOutlinedIcon />}
+                      checkedIcon={<PushPinIcon />}
+                    />
+                  </div>
                 </li>
+                // <Divider variant="middle" />
               ))}
             </ul>
           </Paper>

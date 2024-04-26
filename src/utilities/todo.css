@@ -1,8 +1,11 @@
 * {
   margin: 0%;
   padding: 0%;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  /* font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
+  font-family: "Trebuchet MS";
+  font-weight: 100;
+  font-size: large;
 }
 .todo-app-input-parent {
   display: flex;
@@ -17,7 +20,7 @@
 .todo-app-input {
   width: 60%;
   padding: 0.5em;
-  margin-top: 6em;
+  /* margin-top: 6em; */
 }
 .todo-app-input-elem {
   gap: 0.5em;
@@ -49,14 +52,20 @@
   display: flex;
   margin: 0.25em;
   padding: 0.25em;
-  align-items: center;
   flex-direction: row;
-  /* justify-content: center; */
+  text-align: justify;
+  align-items: flex-start;
+  border-bottom: 1px dashed rgba(124, 124, 124, 0.555);
+  border-left: 1px dashed rgba(124, 124, 124, 0.555);
+  border-radius: 10px;
 }
 
 .main-h1 {
   font-family: "Times New Roman", Times, serif;
   font-size: large;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
 
 .form {

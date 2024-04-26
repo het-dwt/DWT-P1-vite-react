@@ -8,7 +8,8 @@ import About from "./about/about";
 import Contact from "./contact/contact";
 import Home from "./home/home";
 import Shop from "./shop/shop";
-import ProductList from "./home/addProducts";
+import TODOlist from "./todolist/todolist";
+// import ProductList from "./home/addProducts";
 
 export default function LabTabs() {
   const [value, setValue] = React.useState("1");
@@ -29,12 +30,13 @@ export default function LabTabs() {
             <Tab label="Home" value="1" />
             <Tab label="Contact" value="2" />
             <Tab label="About" value="3" />
-            <Tab label="Shop" value="4" />
+            <Tab label="Todo-List" value="4" />
+            <Tab label="Shop" value="5" />
           </TabList>
         </Box>
         <TabPanel value="1">
           <Home />
-          <ProductList />
+          {/* <ProductList /> */}
         </TabPanel>
         <TabPanel value="2">
           <Contact />
@@ -43,6 +45,9 @@ export default function LabTabs() {
           <About />
         </TabPanel>
         <TabPanel value="4">
+          <TODOlist />
+        </TabPanel>
+        <TabPanel value="5">
           <Shop />
         </TabPanel>
       </TabContext>

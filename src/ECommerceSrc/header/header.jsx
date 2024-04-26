@@ -14,7 +14,7 @@ export function Header() {
           </div>
           <div className="content-name">React</div>
           <div className="content">
-            {/* <Outlet /> */}
+            {/* <Outlet /> */}Header
           </div>
         </div>
         <div className="content">

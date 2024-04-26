@@ -3,7 +3,6 @@ import logo from "../header/logo/react.svg";
 import UserAccount from "../header/userAcc/user-acc";
 import LabTabs from "../body/body";
 import { Grid } from "@mui/material";
-// import NavTabs from "../body/body";
 
 function ECommerceApp() {
   return (
@@ -14,7 +13,7 @@ function ECommerceApp() {
           <div className="content-text">React</div>
         </Grid>
         <Grid xs={4} md={4} lg={4} className="content-navtab">
-          {/* <LabTabs /> */}Header
+         APP
         </Grid>
         <Grid xs={4} md={4} lg={4} className="content-useracc">
           <UserAccount />
